@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --primary-color: #1f1f1f;
+  --secondary-color: #2d2d2d;
+  --accent-color: #f9d371;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.app {
+  padding: 4rem 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.search {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--secondary-color);
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.search input {
+  flex: 1;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  background: transparent;
+  outline: none;
+}
+
+.search input::placeholder {
+  color: #aaa;
+}
+
+.search img {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  filter: invert(1);
+  transition: transform 0.2s ease;
+  margin-right: 0.5rem;
+}
+
+.search img:hover {
+  transform: scale(1.1);
+}
+
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.movie {
+  position: relative;
+  background: var(--secondary-color);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.movie:hover {
+  transform: translateY(-5px);
+}
+
+.movie img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.movie div:first-child {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom-left-radius: 10px;
+}
+
+.movie div:first-child p {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.movie div:last-child {
+  padding: 1rem;
+}
+
+.movie div:last-child span {
+  background: var(--accent-color);
+  color: var(--primary-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.movie h3 {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.empty {
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+  color: #aaa;
+}
+
+@media screen and (max-width: 600px) {
+  .app {
+    padding: 2rem 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .search {
+    margin: 1rem auto 2rem;
+    padding: 0.75rem;
+  }
+
+  .container {
+    gap: 1rem;
+  }
+
+  .movie img {
+    height: 350px;
+  }
+}
